@@ -1,0 +1,39 @@
+services:
+  pythondev:
+    container_name: pythondev
+    image: pythondev:latest
+    ports:
+      - 8004:8000
+    volumes:
+      - ./:/app
+    # depends_on:
+    #   - postgredb
+
+#   postgredb:
+#     image: postgres:latest
+#     restart: always
+#     ports:
+#       - 5432:5432
+#     environment:
+#       POSTGRES_USER: pretioum_user
+#       POSTGRES_PASSWORD: pretium_pass
+#       POSTGRES_DB: pretium
+#     volumes:
+#       - dbpostgre:/var/lib/postgresql/data
+#
+#   pgadmin:
+#     image: dpage/pgadmin4:latest
+#     restart: unless-stopped  
+#     environment:
+#       PGADMIN_DEFAULT_EMAIL: "admin@example.com"
+#       PGADMIN_DEFAULT_PASSWORD: "p4ssw0rd"
+#     ports:
+#       - 8200:80
+#     depends_on:
+#       - postgredb
+#     volumes:
+#       - pgadmin:/var/lib/pgadmin
+#
+# volumes:
+#   dbpostgre:
+#   pgadmin:
